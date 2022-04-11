@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bf7c3963d6b648af714272a03d04e34",
+    "content-hash": "5abe41a49613698a4f5470f4b72de96c",
     "packages": [
         {
             "name": "eckinox/php-puppeteer",
-            "version": "0.2.1",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eckinox/php-puppeteer.git",
-                "reference": "dcd77fa3ed58265b89fa71b0b22d6028b7b54583"
+                "reference": "f74b3db05f69d8a5faf6d52b0beae13334851a22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eckinox/php-puppeteer/zipball/dcd77fa3ed58265b89fa71b0b22d6028b7b54583",
-                "reference": "dcd77fa3ed58265b89fa71b0b22d6028b7b54583",
+                "url": "https://api.github.com/repos/eckinox/php-puppeteer/zipball/f74b3db05f69d8a5faf6d52b0beae13334851a22",
+                "reference": "f74b3db05f69d8a5faf6d52b0beae13334851a22",
                 "shasum": ""
             },
             "require": {
@@ -54,9 +54,9 @@
                 "screenshot"
             ],
             "support": {
-                "source": "https://github.com/eckinox/php-puppeteer/tree/0.2.1"
+                "source": "https://github.com/eckinox/php-puppeteer/tree/v1.0.0"
             },
-            "time": "2021-11-04T00:56:53+00:00"
+            "time": "2022-04-11T19:22:15+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -3277,7 +3277,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^8.0"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
 }

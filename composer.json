@@ -5,7 +5,7 @@
     "require": {
 		"php": "^8.0",
 		"twig/twig": "*",
-        "eckinox/php-puppeteer": "^0.2.1",
+        "eckinox/php-puppeteer": "^1.0",
         "symfony/http-foundation": "^4.0|^5.0|^6.0",
         "symfony/http-kernel": "^4.0|^5.0|^6.0"
     },
