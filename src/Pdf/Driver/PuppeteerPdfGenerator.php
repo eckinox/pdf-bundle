@@ -6,6 +6,7 @@ use Eckinox\PdfBundle\Exception\PdfGenerationException;
 use Eckinox\PdfBundle\Pdf\Format;
 use Eckinox\PdfBundle\Pdf\FormatFactory;
 use Eckinox\PdfBundle\Pdf\Pdf;
+use Eckinox\PdfBundle\Pdf\PdfGeneratorInterface;
 use Eckinox\PdfBundle\Pdf\PdfInterface;
 use Eckinox\PhpPuppeteer\Browser;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -15,7 +16,7 @@ use Twig\Environment;
  * Renders a PDF from a Twig template by using Puppeteer to load and render
  * the content.
  */
-class PuppeteerPdfGenerator
+class PuppeteerPdfGenerator implements PdfGeneratorInterface
 {
 	private string $publicDir;
 
