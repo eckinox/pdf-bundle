@@ -152,23 +152,13 @@ $format = new Format("4.25in", "5.5in");
 
 ### Margins
 
-You can define the width and height of margins by using the `Format::setMargins()` method.
+Margins for the document should be handled directly in CSS within your document.
 
-It accepts an array of margins defined with the `top`, `right`, `bottom` and `left` keys.
+Although this library offers some margin support and provides this information to Puppeteer,
+Puppeteer does not actually use it in its current implementation.
 
-Just like the format sizes, margins accept the following units: `px`, `in`, `cm` and `mm`.
-
-Here's an example of custom margins for a built-in format:
-
-```php
-$format = FormatFactory::a4();
-$format->setMargins([
-    'top' => '1.5in',
-    'right' => '1in',
-    'bottom' => '1in',
-    'left' => '1in',
-]);
-```
+You should therefore define margins with physical units (`in`, `cm`, or `mm`) on the `@page` 
+or `html` element in CSS.
 
 
 ## Outputting, downloading and storing PDFs
