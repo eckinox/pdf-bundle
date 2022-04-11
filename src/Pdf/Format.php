@@ -48,12 +48,37 @@ class Format
 	 */
 	public function toArray(): array
 	{
+		$width = $this->width;
+		$height = $this->height;
+		$mmWidth = $this->convertToMillimeter($width);
+		$mmHeight = $this->convertToMillimeter($height);
+
+		// Enfore the orientation (Puppeteer's `landscape` only works with predefined formats)
+		if (($this->landscape && $mmWidth < $mmHeight) ||
+			(!$this->landscape && $mmHeight < $mmWidth)) {
+			$width = $this->height;
+			$height = $this->width;
+		}
+
 		return [
-			'width' => $this->width,
-			'height' => $this->height,
+			'width' => $width,
+			'height' => $height,
 			'margins' => $this->margins,
-			'landscape' => $this->landscape,
 			'printBackground' => true,
 		];
+	}
+
+	private function convertToMillimeter(string $dimension): float
+	{
+		$unit = strtolower(substr(trim($dimension), -2));
+		$number = floatval($dimension);
+
+		return match ($unit) {
+			'mm' => $number,
+			'cm' => $number * 10,
+			'in' => $number * 25.4,
+			'px' => $number / .352778,
+			default => $number
+		};
 	}
 }
