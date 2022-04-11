@@ -1,6 +1,6 @@
 <?php
 
-namespace Eckinox\SensitiveDataBundle\DependencyInjection;
+namespace Eckinox\PdfBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
