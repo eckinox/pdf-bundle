@@ -70,8 +70,8 @@ class ReportController extends AbstractController
     public function overview(PdfGeneratorInterface $pdfGenerator): Response
     {
         $pdf = $pdfGenerator->renderPdf("your_template.html.twig", [
-          "key" => "value",
-          "foo" => "bar",
+            "key" => "value",
+            "foo" => "bar",
         ]);
 
         return $pdf->output();

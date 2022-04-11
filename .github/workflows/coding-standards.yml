@@ -39,9 +39,5 @@ jobs:
               run: DEV/cs/phpstan.sh
             - name: PHP MD
               run: DEV/cs/phpmd.sh
-            - name: Twigcs
-              run: DEV/cs/twigcs.sh
             - name: CSS stylelint
               run: DEV/cs/stylelint.sh
-            - name: ESLint (JS)
-              run: DEV/cs/eslint.sh
