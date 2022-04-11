@@ -4,5 +4,5 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-   Eckinox\PdfBundle\Pdf\PdfGeneratorInterface:
+    Eckinox\PdfBundle\Pdf\PdfGeneratorInterface:
         class: Eckinox\PdfBundle\Pdf\Driver\PuppeteerPdfGenerator
