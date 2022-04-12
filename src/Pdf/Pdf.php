@@ -29,6 +29,11 @@ class Pdf implements PdfInterface
 
 	private function buildResponse(string $filename, string $dispositionType): Response
 	{
+		// Make sure the PDF extension is present in the filename
+		if (!str_ends_with(strtolower($filename), ".pdf")) {
+			$filename .= ".pdf";
+		}
+
 		$response = new Response(
 			$this->content,
 			200,
