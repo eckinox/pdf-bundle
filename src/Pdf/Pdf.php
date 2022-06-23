@@ -4,6 +4,7 @@ namespace Eckinox\PdfBundle\Pdf;
 
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class Pdf implements PdfInterface
 {
@@ -29,10 +30,8 @@ class Pdf implements PdfInterface
 
 	private function buildResponse(string $filename, string $dispositionType): Response
 	{
-		// Make sure the PDF extension is present in the filename
-		if (!str_ends_with(strtolower($filename), ".pdf")) {
-			$filename .= ".pdf";
-		}
+		$filename = $this->normalizeFilename($filename);
+		$extensionlessFilename = str_replace('.pdf', '', $filename);
 
 		$response = new Response(
 			$this->content,
@@ -42,8 +41,8 @@ class Pdf implements PdfInterface
 
 		$disposition = HeaderUtils::makeDisposition(
 			$dispositionType,
-			$filename,
-			$this->sanitizeFilename($filename)
+			$this->normalizeFilename($filename),
+			$this->sanitizeFilename($extensionlessFilename).'.pdf'
 		);
 		$response->headers->set('Content-Disposition', $disposition);
 
@@ -52,8 +51,19 @@ class Pdf implements PdfInterface
 
 	private function sanitizeFilename(string $filename): string
 	{
-		$filename = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $filename);
+		$slugger = new AsciiSlugger();
+		$sluggedFilename = $slugger->slug($filename)->toString();
 
-		return mb_ereg_replace("([\.]{2,})", '', $filename);
+		return strtolower($sluggedFilename);
+	}
+
+	private function normalizeFilename(string $filename): string
+	{
+		// Make sure the PDF extension is present in the filename
+		if (!str_ends_with(strtolower($filename), '.pdf')) {
+			$filename .= '.pdf';
+		}
+
+		return mb_ereg_replace("([\.]{2,})", '.', $filename);
 	}
 }
