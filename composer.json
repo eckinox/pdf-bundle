@@ -7,7 +7,9 @@
 		"twig/twig": "*",
         "eckinox/php-puppeteer": "^1.0",
         "symfony/http-foundation": "^4.0|^5.0|^6.0",
-        "symfony/http-kernel": "^4.0|^5.0|^6.0"
+        "symfony/http-kernel": "^4.0|^5.0|^6.0",
+        "symfony/string": "6.0.9",
+        "symfony/translation-contracts": "3.0.1"
     },
     "require-dev": {
         "eckinox/eckinox-cs": ">=1.2.1"
@@ -22,5 +24,11 @@
             "name": "Émile Perron",
             "email": "contact@emileperron.com"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "eckinox/installer-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    }
 }
