@@ -8,8 +8,8 @@
         "eckinox/php-puppeteer": "^1.0",
         "symfony/http-foundation": "^4.0|^5.0|^6.0",
         "symfony/http-kernel": "^4.0|^5.0|^6.0",
-        "symfony/string": "6.0.9",
-        "symfony/translation-contracts": "3.0.1"
+        "symfony/string": "^5.4|^6.0.9",
+        "symfony/translation-contracts": "^3.0.1"
     },
     "require-dev": {
         "eckinox/eckinox-cs": ">=1.2.1"
