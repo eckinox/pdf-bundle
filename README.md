@@ -171,6 +171,26 @@ The `PdfInterface` instance returned by the PDF generator has three methods you 
   - This is useful to store the PDF to the local filesystem or to external storage like Amazon S3 or DO Spaces.
 
 
+## Troubleshooting
+
+### Large filesize (or: my PDFs are way too big!!)
+
+This bundle relies on Puppeteer, which relies on Chromium's PDF generation. And Chromium's PDF generation, 
+depending on which version is used, can generate PDFs with a very large filesize when the PDF contains 
+images or emojis.
+
+An easy fix for this is to wrap your images in an SVG tag, like so:
+
+```html
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+	<image href="your-image" width="800" height="1200" />
+</svg>
+```
+
+When you do this, your image will be embedded into the PDF at its regular filesize instead of being 
+re-rendered as a PDF. This should dramatically reduce the file size of your generated PDFs.
+
+
 ## License
 
 This bundle is licensed under the MIT license.
