@@ -24,6 +24,9 @@ sudo npm install --global --unsafe-perm puppeteer
 sudo chmod -R o+rx /usr/lib/node_modules/puppeteer/.local-chromium
 ```
 
+That last command may have to change depending on your local NPM installation path. 
+Common locations are `/usr/lib/node_modules` and `/usr/local/lib/node_modules`.
+
 
 ### 2. Install this package via Composer
 
