@@ -21,11 +21,8 @@ Here is a snippet for Ubuntu (tested on 20.04) that works well at the time of wr
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libappindicator3-1 libatk-bridge2.0-0 libgbm1
 sudo npm install --global --unsafe-perm puppeteer
-sudo chmod -R o+rx /usr/lib/node_modules/puppeteer/.local-chromium
+sudo chmod -R o+rx /root/.cache/puppeteer/chrome
 ```
-
-That last command may have to change depending on your local NPM installation path. 
-Common locations are `/usr/lib/node_modules` and `/usr/local/lib/node_modules`.
 
 
 ### 2. Install this package via Composer
