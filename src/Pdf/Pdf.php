@@ -15,7 +15,7 @@ class Pdf implements PdfInterface
 
 	public function getContent(): string
 	{
-		return $this->getContent();
+		return $this->content;
 	}
 
 	public function output(string $filename): Response
