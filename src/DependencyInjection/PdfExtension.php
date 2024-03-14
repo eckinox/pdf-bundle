@@ -14,12 +14,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class PdfExtension extends Extension
 {
-	/**
-	 * @SuppressWarnings(PHPMD.UnusedFormalParameter.configs)
-	 */
-	public function load(array $configs, ContainerBuilder $container): void
-	{
-		$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
-		$loader->load('services.yaml');
-	}
+    public function load(array $configs, ContainerBuilder $container): void
+    {
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
+        $loader->load('services.yaml');
+    }
 }

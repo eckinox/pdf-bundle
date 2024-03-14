@@ -2,8 +2,4 @@
 
 namespace Eckinox\PdfBundle\Exception;
 
-use Exception;
-
-class PdfGenerationException extends Exception
-{
-}
+class PdfGenerationException extends \Exception {}
