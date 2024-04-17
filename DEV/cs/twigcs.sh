@@ -6,5 +6,5 @@ if [ -d "${BASEDIR}/templates" ]; then
 		bin/console lint:twig templates
 	fi
 
-	vendor/friendsoftwig/twigcs/bin/twigcs templates
+	vendor/bin/twig-cs-fixer lint templates
 fi
