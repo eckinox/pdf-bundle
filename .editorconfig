@@ -12,5 +12,5 @@ indent_style = tab
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{yml,yaml,php}]
+[*.{yml,yaml,php,twig,js}]
 indent_style = space
